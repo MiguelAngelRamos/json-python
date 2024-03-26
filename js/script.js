@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         <td>${element.precio}</td>
         <td>${element.stock}</td>
       </tr>
+      
     `;
   })
 
