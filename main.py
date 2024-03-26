@@ -21,8 +21,28 @@ def imprimir_productos():
     print(tabla)
     
 def guardar_producto(productos):
-    with open(ARCHIVO_PRODUCTOS, 'w') as archivo:
-        return json.dump(productos, archivo, indent=4)
+    try:
+        with open(ARCHIVO_PRODUCTOS, 'w') as archivo:
+            return json.dump(productos, archivo, indent=4)
+    except ValueError as error:
+        print(f"Error al abrir el archivo: {error}")
+
+def actualizar_producto():
+    id_producto = int(input("ID del producto a actualizar: "))
+    productos = cargar_productos()
+    
+    for producto in productos:
+        if producto['id'] == id_producto:
+            producto['nombre'] = input("Nuevo nombre para el producto: ")
+            producto['precio'] = float(input("Nuevo precio para el producto: "))
+            producto['stock'] = int(input("Nuevo stock para el producto: "))
+            
+            guardar_producto(productos)
+            print("Producto actualizado exitosamente")
+            return
+    print("Producto no encontrado")
+     
+    
 
 def agregar_producto():
     # Solicito informacion al cliente
@@ -61,7 +81,9 @@ def menu():
         elif opcion == '2':
             agregar_producto()
         elif opcion == '3':
-            print("Saliendo....")
+            actualizar_producto()
+        elif opcion == '4':
+            print("Saliendo...")
             break
         else:
             print("Opcion no valida! intenta de nuevo...")
