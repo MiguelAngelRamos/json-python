@@ -1,26 +1,14 @@
 [
     {
         "id": 1,
-        "nombre": "Teclado Razer",
-        "precio": 1000,
-        "stock": 10
+        "nombre": "Notebook Gamer Asus",
+        "precio": 2000.0,
+        "stock": 20
     },
     {
         "id": 2,
-        "nombre": "Monitor Asus 27 pulgas",
-        "precio": 3000,
-        "stock": 5
-    },
-    {
-        "id": 3,
         "nombre": "Mouse Razer",
-        "precio": 600.0,
-        "stock": 5
-    },
-    {
-        "id": 4,
-        "nombre": "Notebook Gamer Asus",
-        "precio": 2000.0,
-        "stock": 60
+        "precio": 1000.0,
+        "stock": 30
     }
 ]

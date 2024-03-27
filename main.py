@@ -41,6 +41,15 @@ def actualizar_producto():
             print("Producto actualizado exitosamente")
             return
     print("Producto no encontrado")
+    
+def eliminar_producto():
+    id_producto = int(input("Ingrese el ID del producto a eliminar: "))
+    productos = cargar_productos()
+            # es resultante
+    productos = [producto for producto in productos if producto['id'] != id_producto]
+    
+    guardar_producto(productos)
+    print("Producto eliminado de manera exitosa!..")
      
     
 
@@ -83,7 +92,9 @@ def menu():
         elif opcion == '3':
             actualizar_producto()
         elif opcion == '4':
-            print("Saliendo...")
+            eliminar_producto()
+        elif opcion == '5':
+            print("Saliendo del programa...")
             break
         else:
             print("Opcion no valida! intenta de nuevo...")
